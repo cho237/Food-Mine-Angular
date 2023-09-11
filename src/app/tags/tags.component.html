@@ -1,0 +1,12 @@
+
+<div *ngIf="tags" [style.justify-content]="justifyContent" >
+  <a class="{{activeTag === tag.name ? 'activeTag' : '' }}" *ngFor="let tag of tags"
+     (click)="changeActiveTag(tag.name || 'All')">
+    {{tag.name}}({{tag.count}})
+  </a>
+</div>
+<div *ngIf="foodPageTags" [style.justify-content]="justifyContent">
+  <a *ngFor="let tag of foodPageTags" routerLink="/tag/{{tag}}">
+    {{tag}}
+  </a>
+</div>
