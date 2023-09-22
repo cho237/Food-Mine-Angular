@@ -4,7 +4,9 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" routerLink="/cart-page">Cart</a>
+                    <a routerLink="/cart-page" *ngIf="!isAuthenticated">Cart</a>
+                    <a routerLink="/auth" *ngIf="!isAuthenticated">Login</a>
+                    <a routerLink="/auth" (click)="onLogout()" *ngIf="isAuthenticated">Logout</a>
                 </li>
             </ul>
         </nav>

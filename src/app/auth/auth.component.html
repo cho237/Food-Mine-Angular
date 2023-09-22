@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="login-box">
+    <div class="login-header">
+      <header>{{ isLogin ? "Login" : "Register" }}</header>
+    </div>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="input-box">
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Email"
+          name="email"
+          email
+          ngModel
+          required
+        />
+      </div>
+      <div class="input-box">
+        <input
+          type="password"
+          class="input-field"
+          name="password"
+          placeholder="Password"
+          ngModel
+          required
+        />
+      </div>
+      <div class="forgot" *ngIf="isLogin">
+        <section>
+          <input type="checkbox" name="checkbox" id="check" />
+          <label for="check">Remember me</label>
+        </section>
+        <section>
+          <a href="#">Forgot password</a>
+        </section>
+      </div>
+      <div class="input-submit">
+        <button
+          class="submit-btn"
+          id="submit"
+          type="submit"
+          [disabled]="isLoading"
+        >
+          <span *ngIf="!isLoading">
+            {{ isLogin ? "Sign In" : "Sign Up" }}
+          </span>
+          <app-spinner *ngIf="isLoading"></app-spinner>
+        </button>
+      </div>
+      <div class="loading"></div>
+      <div class="sign-up-link">
+        <p>
+          {{
+            isLogin ? "don't have account? " : "you already have an account?? "
+          }}
+          <a (click)="changeMode()">{{ isLogin ? "Register" : "Login" }}</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

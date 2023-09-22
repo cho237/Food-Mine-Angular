@@ -6,8 +6,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent {
-  @Input() visible: boolean = false;
-  @Input() notfoundMessage: string = "Nothing Found!";
-  @Input() resetLinkText: string = "Reset";
+  @Input() visible: boolean = true;
+  @Input() notfoundMessage: string = "Page Not Found!";
+  @Input() resetLinkText: string = "Go To HomePage";
   @Input() resetLinkRoute: string = "/"
 }
