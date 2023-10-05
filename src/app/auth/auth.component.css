@@ -115,3 +115,7 @@ section a{
   font-weight: 600;
   cursor: pointer;
 }
+
+input.ng-invalid.ng-touched{
+  border: 1px solid tomato !important;
+}

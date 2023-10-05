@@ -1,12 +1,19 @@
 import {Injectable} from '@angular/core';
 import {Food} from 'src/app/shared/models/food';
 import {Tag} from "../../shared/models/tag";
+import { Origin } from 'src/app/shared/models/origin';
+import {HttpClient} from "@angular/common/http";
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class FoodService {
-  constructor() {
+  constructor(private http: HttpClient) {
+  }
+
+  addFood(food:Food){
+    return this.http.post("http://localhost:5000/food", food)
   }
 
   getFoodById(id: number):Food {
@@ -19,16 +26,25 @@ export class FoodService {
 
   getAllTags(): Tag[] {
     return [
-      {name: "All", count: 6},
-      {name: "FastFood", count: 4},
-      {name: "Pizza", count: 2},
-      {name: "Lunch", count: 3},
-      {name: "SlowFood", count: 2},
-      {name: "Hamburger", count: 1},
-      {name: "Fry", count: 1},
-      {name: "Soup", count: 1},
+      {id:"12lo34e", name: "All", count: 6},
+      {id:"123r", name: "FastFood", count: 4},
+      {id:"1d2jjr934", name: "Pizza", count: 2},
+      {id:"123r4", name: "Lunch", count: 3},
+      {id:"12s34", name: "SlowFood", count: 2},
+      {id:"12r3g4", name: "Hamburger", count: 1},
+      {id:"1ad34", name: "Fry", count: 1},
+      {id:"123da4", name: "Soup", count: 1},
     ]
   }
+
+  getAllOrigins():Origin[] {
+    return [
+      {id:"12kl9034e", name: "Italy"},
+      {id:"1lkuu23r", name: "France"},
+      {id:"1d2r4434", name: "Cameroon"},
+    ]
+  }
+
 
   getAllFoodsByTag(tag: string): Food[] {
     return tag == "All" ? this.getAll() : this.getAll().filter(food => food.tags.includes(tag));

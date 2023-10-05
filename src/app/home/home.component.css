@@ -7,7 +7,7 @@ ul {
   padding: 0;
 }
 
-ul li a{
+ul .card{
     height: 22rem;
     width: 20rem;
     border: 1px solid whitesmoke;
@@ -17,18 +17,65 @@ ul li a{
     overflow: hidden;
     color: #e72929;
     margin: 10px;
+    position: relative;
 }
 
-li a:hover{
+.image-overlay{
+  position: absolute;
+  height: 13rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.image-overlay:hover{
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  opacity: .5;
+}
+
+img{
+  height: 13rem;
+  cursor: pointer;
+}
+
+.image-overlay .image-button{
+  background-color: #000000;
+  outline: none;
+  border: 1px solid #ffffff;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.10em;
+  padding: 0.5em 1em;
+  transition: 0.25s;
+}
+
+
+.image-overlay .image-button:hover{
+  cursor: pointer;
+  background-color: #222222;
+}
+
+/* li a:hover{
     opacity: 0.9;
     cursor: pointer;
-}
+} */
 
-element.style {
-}
+
 .content{
   padding: .5rem 1rem;
   position: relative;
+}
+.content .name{
+  cursor: pointer;
 }
 .favourite{
   position: absolute;
@@ -64,3 +111,4 @@ element.style {
   color: #414141;
   margin-top: .7rem;
 }
+

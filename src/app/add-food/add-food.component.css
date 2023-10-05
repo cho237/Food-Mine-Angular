@@ -1,0 +1,121 @@
+/*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
+.cd-form {
+  max-width: 640px;
+  background: #fff;
+  padding: 15px 25px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+.cd-form h1 {
+  text-align: center;
+  color: #e72929;
+}
+
+input,
+select {
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.selected-items {
+  display: flex;
+}
+
+.selected-items .text {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  flex: 8;
+  padding: 8px;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 2px 2px;
+  font-size: 1rem;
+}
+
+.selected-items .remove-btn {
+  display: flex;
+  align-items: center;
+  flex: 4;
+  margin: 2px 2px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cd-form .select {
+  margin-top: 10px;
+}
+
+select {
+  margin: 5px 0px !important;
+}
+
+input:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.remove-btn i {
+  font-size: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.cd-form button {
+  width: 100%;
+  border-radius: 4px;
+  margin: 20px 0;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+  background-color: #af1313;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.cd-form button:hover {
+  opacity: .8;
+  width: 100.5%;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid tomato;
+}
+
+.cd-form .name-used {
+  font-size: 0.8rem;
+  color: tomato;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tag-container {
+  align-self: flex-start;
+  width: 100%;
+  min-height: 100px;
+}
+
+.tags-list p i{
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+

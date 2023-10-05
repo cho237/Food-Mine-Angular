@@ -49,6 +49,7 @@ export class AuthComponent {
 
     authObs.subscribe({
       next: (authData) => {
+        console.log(authData)
         this.isLoading = false;
         this.router.navigate(["/"])
         form.reset();

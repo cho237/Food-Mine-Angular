@@ -15,9 +15,10 @@ import { AuthComponent } from './auth/auth.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ToastrModule } from 'ngx-toastr';
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AddFoodComponent } from './add-food/add-food.component';
+import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     NotFoundComponent,
     AuthComponent,
     SpinnerComponent,
+    AddFoodComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +42,17 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      closeButton: true,
+      progressBar:true
+    }),
   ],
   providers: [
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
 })
